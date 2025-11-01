@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jeewan Kumar</title>
+    <meta name="description" content="Heart Care Center - Dr. Jeewan Kumar, Best Cardiologist in Patiala." />
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Saira', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Simple smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Simple transition for nav links */
+        .nav-link {
+            transition: color 0.2s ease-in-out;
+        }
+    </style>
+    <!-- Leaflet CSS for demo map (dummy) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html" title="Dr. Jeewan Kumar">
+                    <img class="h-10 w-auto" src="./img/logo.jpg" alt="Dr. Jeewan Kumar Logo"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x40/000000/FFFFFF?text=Dr.+Jeewan+Kumar';">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-blue-700 border-b-2 border-blue-700 font-medium"
+                    aria-current="page">Home</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Dr. Jeewan Kumar</a>
+                <a href="services.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact Us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-20 left-0 w-full z-40">
+            <a href="index.html" class="block px-4 py-3 text-gray-700 bg-gray-100" aria-current="page">Home</a>
+            <a href="about.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Dr. Jeewan Kumar</a>
+            <a href="services.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="contact.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative h-[600px] md:h-[750px] w-full bg-cover bg-center"
+            style="background-image: url('./img/main-banner3.jpeg');" aria-labelledby="hero-title">
+            <!-- Overlay to ensure text readability -->
+            <div class="absolute inset-0 bg-white bg-opacity-30"></div>
+
+            <div
+                class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center h-full max-w-2xl">
+                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold text-gray-900">
+                    <span class="text-blue-700">Dr.</span> Jeewan Kumar
+                </h1>
+                <p class="mt-4 text-lg text-gray-700 font-medium">
+                    He has over a decade of experience in treating complex heart conditions.
+                    His humane touch with use of cutting edge technologies helps ailing patients recover faster.
+                </p>
+                <a href="contact.html"
+                    class="mt-8 px-8 py-4 bg-blue-700 text-white font-semibold rounded-md shadow-lg hover:bg-blue-800 transition duration-300 ease-in-out text-center uppercase tracking-wider text-sm max-w-xs">
+                    Make an Appointment!
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section (Expertise, Experience, Best) -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- This grid is pulled up to overlap the hero section -->
+                <div class="grid md:grid-cols-3 gap-8 -mt-32 relative z-20">
+                    <!-- Card 1: Expertise -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+                        <div
+                            class="flex justify-center items-center h-16 w-16 bg-blue-100 text-blue-700 rounded-full mx-auto">
+                            <!-- Icon: Academic Cap (for Expertise) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4">Expertise</h3>
+                        <p class="mt-2 text-gray-600">
+                            Highest experienced centre in the region with trans-radial angiography requiring short
+                            hospital stay.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Experience -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+                        <div
+                            class="flex justify-center items-center h-16 w-16 bg-blue-100 text-blue-700 rounded-full mx-auto">
+                            <!-- Icon: Clock (for Experience) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4">Experience</h3>
+                        <p class="mt-2 text-gray-600">
+                            Over a decade of experience in performing complex angioplasty procedures.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Best -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl text-center">
+                        <div
+                            class="flex justify-center items-center h-16 w-16 bg-blue-100 text-blue-700 rounded-full mx-auto">
+                            <!-- Icon: Heart -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.5l1.318-1.182a4.5 4.5 0 116.364 6.364L12 19.5l-7.318-7.318a4.5 4.5 0 010-6.364z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-4">Best</h3>
+                        <p class="mt-2 text-gray-600">
+                            Comprehensive heart care expertise including coronary interventions, heart valves, and
+                            rhythm treatment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Text Content -->
+                <div>
+                    <h4 class="text-sm font-semibold text-blue-700 uppercase tracking-wider">About Doctor</h4>
+                    <h2 class="text-4xl font-bold mt-2">Best Cardiologist in Patiala</h2>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        Dr. Jeewan Mittal has to his credit over 10,000 cardiac intervention procedures. He is trained
+                        in performing complex cardiac procedures including emergency angioplasty or primary PTCA,
+                        multivessel angioplasty, treatment of chronic total occlusion, packer and CRDT device
+                        implantation.
+                    </p>
+
+                    <h3 class="text-2xl font-bold mt-8 mb-4">Treatments</h3>
+                    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4 text-gray-600">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Echocardiography</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Hypertension and Diabetes</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Valvular Interventional</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Heart Failure</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Pacemakers</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Device Implantation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-blue-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Coronary Artery Intervention</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="contact.html"
+                        class="mt-10 inline-block px-7 py-3 bg-white text-gray-800 font-semibold rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 hover:shadow-md transition duration-300 ease-in-out uppercase tracking-wider text-sm">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="relative mt-10 md:mt-0">
+                    <img src="./img/heart-hold.jpg" alt="A doctor holding a model of a heart"
+                        class="rounded-lg shadow-xl w-full h-auto"
+                        onerror="this.onerror=null; this.src='https://placehold.co/515x552/CCCCCC/FFFFFF?text=Heart+Care';">
+
+                    <!-- Experience Box -->
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-blue-700 text-white p-6 rounded-lg shadow-lg w-48 text-center">
+                        <span class="text-5xl font-bold block">15<span class="text-3xl">+</span></span>
+                        <h3 class="text-lg font-semibold mt-1 leading-tight">Years Of Experience</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section (Book Appointment) -->
+        <section id="cta" class="relative py-24 bg-cover bg-center bg-fixed"
+            style="background-image: url('./img/post-img-two.jpg');" aria-labelledby="cta-title">
+
+            <!-- Dark Blue Overlay -->
+            <div class="absolute inset-0 bg-blue-800 bg-opacity-70"></div>
+
+            <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+                <h4 class="text-2xl font-light">Need an appointment For a Check-Up?</h4>
+                <h2 id="cta-title" class="text-4xl md:text-5xl font-bold mt-2">Just make an Appointment</h2>
+                <h3 class="text-3xl font-light mt-4">Call us at: <span class="font-semibold">+91 9781695777</span></h3>
+                <a href="contact.html"
+                    class="mt-8 inline-block px-10 py-4 bg-white text-blue-700 font-semibold rounded-md shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out uppercase tracking-wider text-sm">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- Appointment Form Section -->
+        <section id="bookappointment" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12">Contact Us for an Appointment</h2>
+
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 bg-white shadow-2xl rounded-lg overflow-hidden">
+                    <!-- Left Column: Image -->
+                    <div class="hidden md:block h-64 md:h-full bg-cover bg-center"
+                        style="background-image: url('./img/expimg.jpeg');" aria-label="Doctor with patient">
+                    </div>
+
+                    <!-- Right Column: Info -->
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <p class="text-center text-gray-600 text-lg leading-relaxed">
+                            To schedule an appointment, please contact us directly by phone or email. Our team is ready
+                            to assist you.
+                        </p>
+                        <div class="mt-8 space-y-4">
+                            <a href="tel:+919781695777"
+                                class="block w-full text-center px-8 py-4 bg-blue-700 text-white font-semibold rounded-md shadow-lg hover:bg-blue-800 transition duration-300 ease-in-out uppercase tracking-wider text-sm">
+                                Call: +91 9781695777
+                            </a>
+                            <a href="mailto:jeewan_mittal@yahoo.com"
+                                class="block w-full text-center px-8 py-4 bg-gray-600 text-white font-semibold rounded-md shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out uppercase tracking-wider text-sm">
+                                Email Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Demo Map Section (dummy) -->
+    <section id="map-section" class="bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Our Location</h3>
+            <div id="map" class="w-full h-64 rounded-lg shadow-lg" role="region"
+                aria-label="Map showing clinic location">
+                <noscript>
+                    <div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-600">
+                        Enable JavaScript to see the map.
+                    </div>
+                </noscript>
+            </div>
+            <p class="mt-4 text-gray-600 text-sm">This is a demo map (dummy). Replace with your coordinates or an
+                embedded Google Map as needed.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Column 1: Logo & About -->
+                <div>
+                    <a href="index.html" title="Dr. Jeewan Kumar">
+                        <!-- Footer logo (inverted) -->
+                        <img class="h-10 w-auto brightness-0 invert opacity-80" src="./img/logo.jpg"
+                            alt="Dr. Jeewan Kumar Logo"
+                            onerror="this.onerror=null; this.src='https://placehold.co/150x40/FFFFFF/FFFFFF?text=Dr.+Jeewan+Kumar';">
+                    </a>
+                    <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Providing comprehensive and compassionate heart care for over a decade.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-lg font-saira font-semibold text-white uppercase tracking-wider">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="index.html" class="nav-link text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="nav-link text-gray-400 hover:text-white">Dr. Jeewan Kumar</a>
+                        </li>
+                        <li><a href="services.html" class="nav-link text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="contact.html" class="nav-link text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Working Hours -->
+                <div>
+                    <h3 class="text-lg font-saira font-semibold text-white uppercase tracking-wider">Working Hours</h3>
+                    <div class="mt-4 space-y-3 text-gray-400">
+                        <div class="flex">
+                            <span class="font-semibold text-white w-28">Amar Hospital:</span>
+                            <span>10:00 am – 03:00 pm</span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-semibold text-white w-28">Home Clinic:</span>
+                            <span>05:30 pm – 07:30 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Dr. Jeewan Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menu-toggle-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.getElementsByTagName('a');
+            for (let i = 0; i < mobileLinks.length; i++) {
+                mobileLinks[i].addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+        });
+    </script>
+
+    <!-- Leaflet JS for demo map (dummy) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/map.js"></script>
+
+</body>
+
+</html>

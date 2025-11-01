@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Dr. Jeewan Kumar</title>
+    <meta name="description"
+        content="Learn about Dr. Jeewan Kumar, Best Cardiologist in Patiala. His experience, expertise, and approach to patient care." />
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Saira:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Saira', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Simple smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Simple transition for nav links */
+        .nav-link {
+            transition: color 0.2s ease-in-out;
+        }
+    </style>
+    <!-- Animations -->
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body class="bg-white text-gray-800 page-transition-hidden">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html" title="Dr. Jeewan Kumar">
+                    <!-- Assuming logo.jpg is in an 'img' folder -->
+                    <img class="h-10 w-auto" src="./img/logo.jpg" alt="Dr. Jeewan Kumar Logo"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x40/000000/FFFFFF?text=Dr.+Jeewan+Kumar';">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="about.html" class="nav-link text-blue-700 border-b-2 border-blue-700 font-medium"
+                    aria-current="page">Dr. Jeewan Kumar</a>
+                <a href="index.html#bookappointment" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Book
+                    Appointment</a>
+                <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Contact Us</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-20 left-0 w-full z-40">
+            <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="about.html" class="block px-4 py-3 text-gray-700 bg-gray-100" aria-current="page">Dr. Jeewan
+                Kumar</a>
+            <a href="index.html#bookappointment" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Book
+                Appointment</a>
+            <a href="contact.html" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Title Bar -->
+        <section class="bg-blue-700 py-16 md:py-24 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl font-bold anim-on-scroll anim-hidden">Dr. Jeewan Kumar</h1>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Profile Overview -->
+                <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+                    <!-- Left Column: Image -->
+                    <div class="md:col-span-5 anim-on-scroll anim-hidden">
+                        <img src="./gallery/22.jpg" alt="Dr. Jeewan Kumar" class="rounded-lg shadow-xl w-full h-auto"
+                            onerror="this.onerror=null; this.src='https://placehold.co/480x515/CCCCCC/FFFFFF?text=Dr.+Jeewan+Kumar';">
+                    </div>
+
+                    <!-- Right Column: Info -->
+                    <div class="md:col-span-7 anim-on-scroll anim-hidden">
+                        <h2 class="text-4xl font-bold text-gray-900">Dr. Jeewan Kumar</h2>
+                        <p class="text-2xl text-blue-700 font-medium mt-1">Cardiologist at Amar Hospital</p>
+
+                        <a href="index.html#bookappointment"
+                            class="mt-6 inline-block px-8 py-3 bg-blue-700 text-white font-semibold rounded-md shadow-lg hover:bg-blue-800 transition duration-300 ease-in-out uppercase tracking-wider text-sm anim-on-scroll anim-hidden"
+                            data-anim="zoom">
+                            Make an Appointment
+                        </a>
+
+                        <hr class="my-8 border-gray-200">
+
+                        <!-- Contact Details -->
+                        <div class="space-y-5">
+                            <div class="flex items-center space-x-3">
+                                <div
+                                    class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-700">
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg text-gray-600 font-medium">Phone :</span>
+                                <a href="tel:+919781695777" class="text-lg text-gray-800 hover:text-blue-600">(+91)
+                                    9781695777</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div
+                                    class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-700">
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg text-gray-600 font-medium">Email :</span>
+                                <a href="mailto:jeewan_mittal@yahoo.com"
+                                    class="text-lg text-gray-800 hover:text-blue-600">jeewan_mittal@yahoo.com</a>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div
+                                    class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-700 pt-1">
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg text-gray-600 font-medium">Address :</span>
+                                <span class="text-lg text-gray-800">Amar Hospital, Patiala, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed About Text -->
+                <div class="max-w-4xl mx-auto mt-16 md:mt-24">
+                    <h2 class="text-3xl font-bold text-center anim-on-scroll anim-hidden">About Dr. Jeewan Kumar</h2>
+                    <div
+                        class="mt-6 text-gray-600 leading-relaxed text-lg space-y-4 text-center anim-on-scroll anim-hidden">
+                        <p>
+                            Dr. Jeewan Mittal has to his credit over 10,000 cardiac intervention procedures. He is
+                            trained in performing complex cardiac procedures including emergency angioplasty or primary
+                            PTCA, multivessel angioplasty, treatment of chronic total occlusion, packer and CRDT device
+                            implantation.
+                        </p>
+                        <p>
+                            He has over a decade of experience in treating complex heart conditions. His humane touch
+                            with use of cutting edge technologies helps ailing patients recover faster. Dr. Jeewan’s
+                            motto of care is “every patient is special and deserve the best care”. He is applying best
+                            scientific knowledge, technologies and passion to care to advance sciences in cardiovascular
+                            care.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Column 1: Logo & About -->
+                <div>
+                    <a href="index.html" title="Dr. Jeewan Kumar">
+                        <!-- Footer logo (inverted) -->
+                        <img class="h-10 w-auto brightness-0 invert opacity-80" src="./img/logo.jpg"
+                            alt="Dr. Jeewan Kumar Logo"
+                            onerror="this.onerror=null; this.src='https://placehold.co/150x40/FFFFFF/FFFFFF?text=Dr.+Jeewan+Kumar';">
+                    </a>
+                    <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Providing comprehensive and compassionate heart care for over a decade.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-lg font-saira font-semibold text-white uppercase tracking-wider">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="index.html" class="nav-link text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="nav-link text-gray-400 hover:text-white">Dr. Jeewan Kumar</a>
+                        </li>
+                        <li><a href="index.html#bookappointment" class="nav-link text-gray-400 hover:text-white">Book
+                                Appointment</a></li>
+                        <li><a href="contact.html" class="nav-link text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Working Hours -->
+                <div>
+                    <h3 class="text-lg font-saira font-semibold text-white uppercase tracking-wider">Working Hours</h3>
+                    <div class="mt-4 space-y-3 text-gray-400">
+                        <div class="flex">
+                            <span class="font-semibold text-white w-28">Amar Hospital:</span>
+                            <span>10:00 am – 03:00 pm</span>
+                        </div>
+                        <div class="flex">
+                            <span class="font-semibold text-white w-28">Home Clinic:</span>
+                            <span>05:30 pm – 07:30 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Dr. Jeewan Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menu-toggle-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.getElementsByTagName('a');
+            for (let i = 0; i < mobileLinks.length; i++) {
+                mobileLinks[i].addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            }
+        });
+    </script>
+
+    <!-- Animations script (page transitions + scroll reveals) -->
+    <script src="assets/js/animations.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+/* Simple, small animation utilities and initial states */
+.anim-hidden {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.anim-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variants */
+.anim-fade {
+    transform: none;
+}
+
+.anim-zoom {
+    transform: scale(.95);
+}
+
+.anim-in-view.anim-zoom {
+    transform: scale(1);
+}
+
+/* Stagger helper for child elements */
+.anim-stagger>* {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 560ms ease, transform 560ms ease;
+}
+
+.anim-stagger.anim-in-view>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* utility to set animation delay per-child (works for up to 8 children) */
+.anim-stagger.anim-in-view>*:nth-child(1) {
+    transition-delay: 0ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(2) {
+    transition-delay: 80ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(3) {
+    transition-delay: 160ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(4) {
+    transition-delay: 240ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(5) {
+    transition-delay: 320ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(6) {
+    transition-delay: 400ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(7) {
+    transition-delay: 480ms
+}
+
+.anim-stagger.anim-in-view>*:nth-child(8) {
+    transition-delay: 560ms
+}
+
+/* Small performance note: keep animations GPU-friendly and limited in scope */
+
+/* Page transition helpers (fade in/out between pages) */
+body.page-transition-hidden {
+    opacity: 0;
+}
+
+body.page-transition-ready {
+    opacity: 1;
+    transition: opacity 320ms ease, transform 320ms ease;
+}
+
+body.page-transition-exit {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 320ms ease, transform 320ms ease;
+}
+
+/* Map styles (dummy map container) */
+#map {
+    width: 100%;
+    height: 16rem;
+    /* 256px */
+    border-radius: 0.5rem;
+}
+
+.leaflet-container {
+    border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    #map {
+        height: 20rem;
+        /* 320px on md+ */
+    }
+}
